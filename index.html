@@ -57,10 +57,18 @@
       <section class="hero">
         <div class="container">
           <h1 class="hero-title">Ефективні рішення для вашого бізнесу</h1>
-          <button type="button" class="main-button data-modal-open">Замовити послугу</button>
+          <button type="button" class="main-button" data-modal-open>Замовити послугу</button>
         </div>
 
-        <div class="backdrop"></div>
+        <div class="backdrop is-hidden" data-modal>
+          <div class="modal">
+            <div class="elips-svg" data-modal-close>
+              <svg width="11px" height="11px">
+                <use href="./images/icons.svg#icon-cross"></use>
+              </svg>
+            </div>
+          </div>
+        </div>
       </section>
 
       <section class="section without-botpadding">

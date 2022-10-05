@@ -26,6 +26,7 @@
   --icon-soc-networks-color: #afb1b8;
 
   --background-dark-color: #2f303acc;
+  --background-backdrop: #00000033;
 }
 
 body {
@@ -253,6 +254,50 @@ header {
   line-height: 1.36;
   letter-spacing: 0.06em;
   text-transform: uppercase;
+}
+
+/* ---------MODAL--------- */
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: var(--background-backdrop);
+}
+
+.backdrop.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.modal {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 528px;
+  height: 581px;
+  background-color: var(--primary-white-color);
+
+  transform: translate(-50%, -50%);
+  box-shadow: 0px 2px 1px 0px #00000033, 0px 1px 1px 0px #00000024, 0px 1px 3px 0px #0000001f;
+}
+
+.elips-svg {
+  position: absolute;
+  right: 8px;
+  top: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 30px;
+  height: 30px;
+  border: 1px solid #0000001a;
+  border-radius: 50%;
+
+  cursor: pointer;
 }
 
 /* ------------BUTTON------------ */
@@ -639,7 +684,42 @@ header {
   box-shadow: 1px 4px 6px 0px #00000029, 0px 4px 4px 0px #0000000f, 0px 1px 1px 0px #0000001f;
 }
 
-.examples-list .border {
+/* ----------TOP-BOARD---------- */
+
+.examples-list .top-board {
+  position: relative;
+  overflow: hidden;
+}
+
+.top-board .card-backdrop {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+  background-color: #2196f3e5;
+
+  transform: translateX(100%);
+}
+
+.card-backdrop .text {
+  padding: 63px 24px;
+
+  font-size: 18px;
+  line-height: 1.56;
+  letter-spacing: 0.03em;
+
+  color: var(--primary-white-color);
+}
+
+.card-link:hover .card-backdrop {
+  transform: translateX(0);
+}
+
+/* ----------BOTTOM-BOARD---------- */
+
+.examples-list .bottom-board {
   padding: 20px 24px;
 
   border: 1px solid var(--card-border-background);
