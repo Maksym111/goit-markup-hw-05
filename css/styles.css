@@ -24,6 +24,8 @@
   --gray-header-border: #ececec;
   --btn-background-color: #188ce8;
   --icon-soc-networks-color: #afb1b8;
+
+  --background-dark-color: #2f303acc;
 }
 
 body {
@@ -147,6 +149,7 @@ header {
 }
 
 .site-nav .link {
+  position: relative;
   display: block;
   padding: 32px 0;
 
@@ -160,6 +163,20 @@ header {
 
 .site-nav .link.current {
   color: var(--accent-blue-color);
+}
+
+.site-nav .link.current::after {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+
+  width: 100%;
+  height: 4px;
+  border-radius: 2px;
+
+  background-color: var(--accent-blue-color);
 }
 
 .site-nav .link:hover,
@@ -366,12 +383,33 @@ header {
 }
 
 .work-list .item {
+  position: relative;
+
   margin-top: 0;
   margin-bottom: 0;
 }
 
 .work-list .item-image {
   display: block;
+}
+
+.work-list .item-title-image {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+
+  display: block;
+  width: 100%;
+  padding-top: 27px;
+  padding-bottom: 27px;
+
+  font-weight: 700;
+  line-height: 1.14;
+  text-align: center;
+  text-transform: uppercase;
+  color: var(--primary-white-color);
+
+  background-color: var(--background-dark-color);
 }
 
 /* ------------КОМАНДА------------ */
