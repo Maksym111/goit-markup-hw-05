@@ -24,9 +24,10 @@
   --gray-header-border: #ececec;
   --btn-background-color: #188ce8;
   --icon-soc-networks-color: #afb1b8;
-
   --background-dark-color: #2f303acc;
   --background-backdrop: #00000033;
+
+  --transition-standart: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 body {
@@ -265,11 +266,19 @@ header {
   bottom: 0;
   right: 0;
   background-color: var(--background-backdrop);
+  opacity: 1;
+
+  transition: opacity var(--transition-standart);
+  z-index: 10;
 }
 
 .backdrop.is-hidden {
   opacity: 0;
   pointer-events: none;
+}
+
+.backdrop.is-hidden .modal {
+  transform: translate(-50%, -50%) scale(1.1);
 }
 
 .modal {
@@ -279,9 +288,11 @@ header {
   width: 528px;
   height: 581px;
   background-color: var(--primary-white-color);
-
-  transform: translate(-50%, -50%);
   box-shadow: 0px 2px 1px 0px #00000033, 0px 1px 1px 0px #00000024, 0px 1px 3px 0px #0000001f;
+
+  transform: translate(-50%, -50%) scale(1);
+
+  transition: transform var(--transition-standart);
 }
 
 .elips-svg {
@@ -432,6 +443,7 @@ header {
 
   margin-top: 0;
   margin-bottom: 0;
+  overflow: hidden;
 }
 
 .work-list .item-image {
@@ -453,8 +465,14 @@ header {
   text-align: center;
   text-transform: uppercase;
   color: var(--primary-white-color);
-
   background-color: var(--background-dark-color);
+
+  transform: translateY(100%);
+  transition: transform var(--transition-standart);
+}
+
+.item:hover .item-title-image {
+  transform: translateY(0);
 }
 
 /* ------------КОМАНДА------------ */
@@ -700,7 +718,8 @@ header {
   height: 100%;
   background-color: #2196f3e5;
 
-  transform: translateX(100%);
+  transform: translateY(100%);
+  transition: transform var(--transition-standart);
 }
 
 .card-backdrop .text {
@@ -713,8 +732,9 @@ header {
   color: var(--primary-white-color);
 }
 
-.card-link:hover .card-backdrop {
-  transform: translateX(0);
+.card-link:hover .card-backdrop,
+.card-link:focus .card-backdrop {
+  transform: translateY(0);
 }
 
 /* ----------BOTTOM-BOARD---------- */
