@@ -99,9 +99,16 @@ button {
 
 header {
   border-bottom: 1px solid var(--gray-header-border);
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  background-color: var(--primary-white-color);
+
+  z-index: 5;
 }
 
-.main-header {
+.container.main-header {
   display: flex;
   align-items: center;
 }
@@ -161,6 +168,8 @@ header {
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.02em;
+
+  transition: color var(--transition-standart);
 }
 
 .site-nav .link.current {
@@ -213,6 +222,8 @@ header {
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.02em;
+
+  transition: color var(--transition-standart), fill var(--transition-standart);
 }
 
 .info-nav .icon {
@@ -223,6 +234,10 @@ header {
 .info-nav .link:hover,
 .info-nav .link:focus {
   color: var(--accent-blue-color);
+}
+
+main {
+  margin-top: 80px;
 }
 
 /* ------------HERO------------ */
@@ -340,6 +355,9 @@ header {
 
   background-color: var(--gray-background);
   color: var(--secondary-black-color);
+
+  transition: background-color var(--transition-standart), color var(--transition-standart),
+    box-shadow var(--transition-standart);
 }
 
 .button-list .button:hover,
@@ -362,6 +380,7 @@ header {
 
   color: var(--primary-white-color);
   background-color: var(--accent-blue-color);
+  transition: background-color var(--transition-standart);
 }
 
 .main-button:hover,
@@ -537,6 +556,7 @@ header {
   border-radius: 50%;
 
   color: var(--icon-soc-networks-color);
+  transition: color var(--transition-standart), background-color var(--transition-standart);
 }
 
 .soc-networks .icon {
@@ -574,6 +594,8 @@ header {
   border-radius: 4px;
 
   color: var(--icon-soc-networks-color);
+
+  transition: border-color var(--transition-standart), color var(--transition-standart);
 }
 
 .section-clients .image {
@@ -615,10 +637,14 @@ header {
 .address-list .link {
   color: var(--gray-opacity-color);
   line-height: 1.71;
+
+  transition: color var(--transition-standart);
 }
 
 .address-list .link[href*='maps'] {
   color: var(--primary-white-color);
+
+  transition: color var(--transition-standart);
 }
 
 .address-list .link:hover,
@@ -660,6 +686,8 @@ header {
 
   background-color: #ffffff1a;
   color: var(--primary-white-color);
+
+  transition: background-color var(--transition-standart);
 }
 
 .footer-second-column .icon {
@@ -695,6 +723,8 @@ header {
 .examples-list .card-link {
   display: block;
   color: var(--primary-text-color);
+
+  transition: box-shadow var(--transition-standart);
 }
 
 .examples-list .card-link:hover,
