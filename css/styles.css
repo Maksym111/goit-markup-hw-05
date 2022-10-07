@@ -223,7 +223,7 @@ header {
   line-height: 1.14;
   letter-spacing: 0.02em;
 
-  transition: color var(--transition-standart), fill var(--transition-standart);
+  transition: color var(--transition-standart);
 }
 
 .info-nav .icon {
@@ -474,14 +474,14 @@ main {
   bottom: 0;
   left: 0;
 
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
-  padding-top: 27px;
-  padding-bottom: 27px;
+  height: 70px;
 
   font-weight: 700;
   line-height: 1.14;
-  text-align: center;
   text-transform: uppercase;
   color: var(--primary-white-color);
   background-color: var(--background-dark-color);
